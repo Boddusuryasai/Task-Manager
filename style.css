@@ -1,0 +1,124 @@
+body {
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    gap:20px;
+    /* flex-wrap: wrap; */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+ label {
+    width: 100%;
+    font-weight: bold;
+    
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .todo {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    gap:20px
+  }
+  .head-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .todo h2 {
+    margin: 0;
+  }
+  .todo > div{
+    min-width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 5px;
+  }
+  .todo ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .todo li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 20px;
+    border-left: 2px solid blue;
+    border-radius: 11px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-left: 4px solid blue;
+  }
+  #todo-list{
+    display: flex;
+    flex-direction: row ;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap:20px
+  }
+  .hidden{
+    display: none;
+  }
+
+  @media (max-width: 380px) {
+    .container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  .checked {
+    text-decoration: line-through;
+  }
+  
