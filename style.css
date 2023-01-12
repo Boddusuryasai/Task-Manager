@@ -1,18 +1,24 @@
-body {
-    font-family: sans-serif;
-    background-color: #f5f5f5;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap'); 
+
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
   }
-  
   .container {
+    font-family: "Poppins";
     max-width: 1200px;
+   min-height: 600px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 0 auto;
-    background-color: white;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     padding: 20px;
+    color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     gap:20px;
+    position: relative;
     /* flex-wrap: wrap; */
   }
   
@@ -42,25 +48,26 @@ body {
   }
   
   input[type="submit"] {
-    background-color: #4caf50;
-    color: white;
+    color: #2b2a2a;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     padding: 12px;
     font-weight: bold;
     margin-top: 10px;
+    border: 1px solid rgb(37, 37, 37);
+    background-color: inherit;
   }
-  
-  input[type="submit"]:hover {
-    background-color: #45a049;
+  input:focus{
+    outline: none;
   }
+ 
   
   .todo {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: rgb(55, 54, 54);
+    box-shadow: 2px 2px 7px 7px rgb(0 0 0 / 10%);
     margin-bottom: 20px;
     padding: 20px;
     gap:20px
@@ -96,10 +103,10 @@ body {
     list-style-type: none;
     margin-bottom: 20px;
     border-left: 2px solid blue;
-    border-radius: 11px;
+    border-radius: 7px;
     padding: 5px;
-    border: 1px solid gray;
-    border-left: 4px solid blue;
+    border: 1px solid #8aa7ec;
+    border-left: 4px solid #d16ba5;
   }
   #todo-list{
     display: flex;
@@ -121,4 +128,39 @@ body {
   .checked {
     text-decoration: line-through;
   }
-  
+  #edit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    /* hide form by default */
+    visibility: hidden;
+    opacity: 0;
+    /* add transition for smooth animation */
+    transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+    background-color: white;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#edit.is-active {
+  visibility: visible;
+  opacity: 1;
+  /* make the transition smooth */
+  transition-delay: 0s;
+}
+#save{
+  background-color: white;
+    border: 1px solid #0000;
+    padding: 5px 8px;
+   
+    font-weight: bold;
+    border-radius: 4px;
+}

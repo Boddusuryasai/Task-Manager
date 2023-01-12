@@ -8,6 +8,7 @@ A simple todo app that allows you to add, view, and delete todo items and their 
 - View the todo list
 - Mark sub tasks as completed
 - Delete todo items and sub tasks
+- Edit sub tasks
 
 ## Technologies Used
 
@@ -22,5 +23,6 @@ A simple todo app that allows you to add, view, and delete todo items and their 
 2. The todo and its sub tasks will be added to the todo list
 3. Check the checkbox next to a sub task to mark it as completed
 4. Click the trash icon next to a todo or sub task to delete it
+5. Click on the edit icon to edit the task name , that icon acts as a toggle to open and close edit form.
 
-![outputUi](./Tasks%20Manager1.PNG)
+![outputUi](./taskManagerv2.PNG)

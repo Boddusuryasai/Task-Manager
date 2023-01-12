@@ -1,5 +1,10 @@
 const todoForm = document.querySelector('#todo-form');
 const todoList = document.querySelector('#todo-list');
+const edit = document.getElementById("edit")
+const save = document.getElementById("save")
+const editinput = document.getElementById("edit-input")
+console.log(editinput);
+
 
 todoForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -65,10 +70,21 @@ function renderTodos() {
       li.appendChild(label);
       const deleteSubTaskButton = document.createElement('i');
       deleteSubTaskButton.classList.add("fa-solid" , "fa-trash");   
+      const editSubTaskButton = document.createElement('i');
+    
+      editSubTaskButton.classList.add("fa-regular" , "fa-pen-to-square"); 
       deleteSubTaskButton.addEventListener('click', () => {
         deleteSubTask(todoIndex, subTaskIndex);
       });
+      editSubTaskButton.addEventListener('click', () => {
+           edit.classList.toggle("is-active");
+           
+           save.onclick= function(){
+            editTask(todoIndex, subTaskIndex , editinput , label)
+           }
+      });
       li.appendChild(deleteSubTaskButton);
+      li.appendChild(editSubTaskButton)
 
       todoSubTasks.appendChild(li);
     });
@@ -93,7 +109,14 @@ function deleteSubTask(todoIndex, subTaskIndex) {
   localStorage.setItem('taskManager', JSON.stringify(todos));
   renderTodos();
 }
-
+function editTask(todoIndex, subTaskIndex , editinput , label){
+  let todos= getTodos();
+   todos[todoIndex].subTasks[subTaskIndex]=editinput.value
+   localStorage.setItem('taskManager', JSON.stringify(todos));
+    edit.classList.toggle("is-active")
+    renderTodos();
+   
+}
 
 renderTodos();
 
