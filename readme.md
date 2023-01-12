@@ -24,5 +24,7 @@ A simple todo app that allows you to add, view, and delete todo items and their 
 3. Check the checkbox next to a sub task to mark it as completed
 4. Click the trash icon next to a todo or sub task to delete it
 5. Click on the edit icon to edit the task name , that icon acts as a toggle to open and close edit form.
-
+ 
+ [Live Link](https://friendly-semolina-cde4ad.netlify.app/)
+ 
 ![outputUi](./taskManagerv2.PNG)
